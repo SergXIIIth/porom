@@ -5,6 +5,7 @@ Pure Old Ruby Object Model - tool to decouple application from data storage and 
 ## Reading, Inspiration
 
 http://solnic.eu/2011/08/01/making-activerecord-models-thin.html
+
 http://obvious.retromocha.com/
 
 ## Features
@@ -13,7 +14,7 @@ http://obvious.retromocha.com/
 
 Entities represent data in your system. They are fairly simple data structures that mostly just contain data and do validation on the data they contain. Simple entities usually only need a shape method to make writing contracts easier, a populate method of populating the object, and a to_hash method for using the object elsewhere.
 
-```
+```ruby
   class Post
     include Porom::Entity
 
@@ -30,13 +31,13 @@ Entities represent data in your system. They are fairly simple data structures t
     has_many - support lazy load from Transporter
 ```
 
-### Actions
+### Actions or UseCases ?
 
-Actions are the use cases of the system. They are where most of the business logic of the system happens. They are single action objects that take in Contract as constructor arguments to enable pluggable data sources.
+Actions are the use cases of the system. They are where most of the business logic of the system happens. They are single action objects that take in Transporter as constructor arguments to enable pluggable data sources.
 
 ### Transporters
 
-Transport Entities to other objects (ORM, View presentation)
+Copy Entities to other objects (ORM, View presentation)
 
 
 ## Installation
